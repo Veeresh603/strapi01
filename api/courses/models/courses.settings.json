@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "courses",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "descrption": {
+      "type": "richtext",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "course_thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
